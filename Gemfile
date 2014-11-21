@@ -10,14 +10,13 @@ gem 'jbuilder', '~> 2.0'                                                        
 gem 'slim', '2.1.0'                                                                                 # Shorter templates
 gem 'bootstrap-sass', '3.3.1'
 gem 'autoprefixer-rails'
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer',  platforms: :ruby
+gem 'therubyracer', '0.12.1',  platforms: :ruby                                                     # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 
 gem 'sdoc', '~> 0.4.0', group: :doc # bundle exec rake doc:rails generates the API under doc/api.
 
 group :development do
   gem 'spring', '1.1.3'                                                                             # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring-commands-rspec', '1.0.2'
   gem 'quiet_assets', '1.0.3'
   gem 'better_errors', '2.0.0'                                                                      # Detailed exceptions view
   gem 'binding_of_caller', '0.7.2'                                                                  # Needed for better_errors advanced features
@@ -26,6 +25,11 @@ end
 group :development, :test do
   gem 'rspec-rails', '3.1.0'
 end
+
+group :test do
+  gem 'database_cleaner', '1.3.0'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
