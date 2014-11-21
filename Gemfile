@@ -23,6 +23,9 @@ group :development do
   gem 'binding_of_caller', '0.7.2'                                                                  # Needed for better_errors advanced features
 end
 
+group :development, :test do
+  gem 'rspec-rails', '3.1.0'
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
