@@ -1,3 +1,32 @@
-// Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "config";
+
+$ocean_blue_color: #82c9ed;
+$nav_link_color: #4c4c4c;
+
+.navbar-default{
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.navbar-default .navbar-nav > li > a{
+  color: $nav_link_color !important;
+
+  &:hover{
+    color: $ocean_blue_color !important;
+
+    span.underliner{
+      border-bottom: 1px solid $ocean_blue_color;
+      padding-bottom: 8px;
+    }
+  }
+}
+
+// Customize bottom of the navbar
+.navbar-fixed-top{
+  border-width: 0 0 0 !important;
+  box-shadow: 0px 0px 2px;
+}
+
+// To show data AFTER navbar (removing blocking the content).
+body {
+  padding-top: $nav_height + 5px; // Few pixels added for more space.
+}

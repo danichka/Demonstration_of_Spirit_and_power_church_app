@@ -16,4 +16,9 @@
 
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
+@import "config";
+
+// Varialbes should be defined before "bootstrap".
+$navbar-height: $nav_height;
+
 @import "bootstrap";
