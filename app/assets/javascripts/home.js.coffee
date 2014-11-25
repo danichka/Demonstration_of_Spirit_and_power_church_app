@@ -7,33 +7,20 @@ jQuery ->
   is_navbar_minimized        = false
   is_navbar_header_minimized = false
   is_links_minimized         = false
-  is_body_maximized          = false
 
-  # Status of minimizing animation.
-  is_navbar_minimized_animating        = false
-  is_navbar_header_minimized_animating = false
-  is_links_minimized_animating         = false
-  is_body_maximized_animating          = false
-
-  # Status of maximizing animation.
-  is_navbar_maximized_animating        = false
-  is_navbar_header_maximized_animating = false
-  is_links_maximized_animating         = false
-  is_body_minimized_animating          = false
+  # Status of navbar animation.
+  is_navbar_transforming        = false
+  is_navbar_header_transforming = false
+  is_links_transforming         = false
 
   is_nav_minimized = () ->
-    is_navbar_minimized && is_navbar_header_minimized && is_links_minimized && !is_body_maximized
+    is_navbar_minimized && is_navbar_header_minimized && is_links_minimized
 
   is_nav_maximized = () ->
     !is_nav_minimized()
 
-  is_nav_minimizing_now = () ->
-    is_navbar_minimized_animating && is_navbar_header_minimized_animating &&
-    is_links_minimized_animating && is_body_maximized_animating
-
-  is_nav_maximizing_now = () ->
-    is_navbar_maximized_animating && is_navbar_header_maximized_animating &&
-    is_links_maximized_animating && is_body_minimized_animating
+  is_nav_transforming_now = () ->
+    is_navbar_transforming && is_navbar_header_transforming && is_links_transforming
 
   $(document).on "scroll", ->
     SIZE_OF_BIG_NAV = 90
@@ -45,12 +32,11 @@ jQuery ->
 
     if scrollTop > SIZE_OF_BIG_NAV
       # Minimizing.
-      if is_nav_minimized() == false and is_nav_minimizing_now() == false
+      if is_nav_minimized() == false and is_nav_transforming_now() == false
         # Animation started.
-        is_navbar_minimized_animating        = true
-        is_navbar_header_minimized_animating = true
-        is_links_minimized_animating         = true
-        is_body_maximized_animating          = true
+        is_links_transforming         = true
+        is_navbar_transforming        = true
+        is_navbar_header_transforming = true
 
         # Make links smaller.
         $("nav.navbar a").animate({
@@ -59,7 +45,7 @@ jQuery ->
         },
         complete: ->
           is_links_minimized = true
-          is_links_minimized_animating = false
+          is_links_transforming = false
         )
 
         # Make nav smaller too.
@@ -68,7 +54,7 @@ jQuery ->
         },
         complete: ->
           is_navbar_minimized = true
-          is_navbar_minimized_animating = false
+          is_navbar_transforming = false
         )
 
         # Nav header
@@ -77,25 +63,15 @@ jQuery ->
         },
         complete: ->
           is_navbar_header_minimized = true
-          is_navbar_header_minimized_animating = false
-        )
-
-        # Give more space to text when navbar become smaller.
-        $("body").animate({
-          "padding-top": "#{SIZE_OF_SMALL_NAV}px"
-        },
-        complete: ->
-          is_body_maximized = false
-          is_body_maximized_animating = false
+          is_navbar_header_transforming = false
         )
     else
       # Maximizing.
-      if is_nav_maximized() == false && is_nav_maximizing_now() == false
+      if is_nav_maximized() == false && is_nav_transforming_now() == false
         # Animation started.
-        is_navbar_maximized_animating        = true
-        is_navbar_header_maximized_animating = true
-        is_links_maximized_animating         = true
-        is_body_minimized_animating          = true
+        is_links_transforming         = true
+        is_navbar_transforming        = true
+        is_navbar_header_transforming = true
 
         # Make links bigger.
         $("nav.navbar a").animate({
@@ -104,7 +80,7 @@ jQuery ->
         },
         complete: ->
           is_links_minimized = false
-          is_links_maximized_animating = false
+          is_links_transforming = false
         )
 
         # Make navbar bigger.
@@ -113,7 +89,7 @@ jQuery ->
         },
         complete: ->
           is_navbar_minimized = false
-          is_navbar_maximized_animating = false
+          is_navbar_transforming = false
         )
 
         # Nav header
@@ -122,14 +98,5 @@ jQuery ->
         },
         complete: ->
           is_navbar_header_minimized = false
-          is_navbar_header_maximized_animating = false
-        )
-
-        # Give less space for text.
-        $("body").animate({
-          "padding-top": "#{SIZE_OF_BIG_NAV + BIG_NAV_BOTTOM_PADDING}px"
-        },
-        complete: ->
-          is_body_maximized = true
-          is_body_minimized_animating = false
+          is_navbar_header_transforming = false
         )
