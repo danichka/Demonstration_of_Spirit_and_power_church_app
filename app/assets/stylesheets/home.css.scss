@@ -36,3 +36,22 @@ a.navbar-brand{
   font-weight: bold;
   color: $hard_black !important;
 }
+
+// Minimized navbar style.
+nav.navbar.minimized{
+  min-height: 10px !important;
+}
+
+a.navbar-brand.minimized{
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.navbar-default .navbar-nav > li > a.minimized{
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.navbar-header.minimized{
+  height: 10px;
+}

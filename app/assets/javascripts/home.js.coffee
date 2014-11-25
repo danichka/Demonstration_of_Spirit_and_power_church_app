@@ -43,6 +43,9 @@ jQuery ->
         complete: ->
           is_links_minimized = true
           is_links_transforming = false
+
+          $("nav.navbar a").addClass("minimized")
+          $("nav.navbar a").removeAttr('style')
         )
 
         # Make nav smaller too.
@@ -52,10 +55,15 @@ jQuery ->
         complete: ->
           is_navbar_minimized = true
           is_navbar_transforming = false
+
+          $("nav.navbar").addClass("minimized")
+          $("nav.navbar").removeAttr('style')
         )
 
         # Nav header (css instead of animation to remove blinking).
         $(".navbar-header").css("height": "#{MIN_NAV_ACTUAL_HEIGHT}px")
+        $(".navbar-header").addClass("minimized")
+        $(".navbar-header").removeAttr('style')
     else
       # Maximizing.
       if is_nav_maximized() == false && is_nav_transforming_now() == false
@@ -71,6 +79,9 @@ jQuery ->
         complete: ->
           is_links_minimized = false
           is_links_transforming = false
+
+          $("nav.navbar a").removeClass("minimized")
+          $("nav.navbar a").removeAttr('style')
         )
 
         # Make navbar bigger.
@@ -80,7 +91,12 @@ jQuery ->
         complete: ->
           is_navbar_minimized = false
           is_navbar_transforming = false
+
+          $(".navbar").removeClass("minimized")
+          $(".navbar").removeAttr('style')
         )
 
         # Nav header (css instead of animation to remove blinking).
         $(".navbar-header").css("height": SIZE_OF_BIG_NAV)
+        $(".navbar-header").removeClass("minimized")
+        $(".navbar-header").removeAttr('style')
