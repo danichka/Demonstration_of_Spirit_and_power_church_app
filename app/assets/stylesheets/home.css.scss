@@ -37,21 +37,42 @@ a.navbar-brand{
   color: $hard_black !important;
 }
 
-// Minimized navbar style.
-nav.navbar.minimized{
-  min-height: 10px !important;
+// ----------------------------------------------------------------- //
+// -------------------- Minimized navbar style. -------------------- //
+// ----------------------------------------------------------------- //
+
+@mixin minimized-navbar() {
+  .navbar.minimized{
+    min-height: 10px !important;
+  }
+
+  a.navbar-brand.minimized{
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+
+  .navbar-default .navbar-nav > li > a.minimized{
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+
+  .navbar-header.minimized{
+    margin-bottom: -51px;
+  }
 }
 
-a.navbar-brand.minimized{
-  padding-bottom: 10px;
-  padding-top: 10px;
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  @include minimized-navbar();
 }
 
-.navbar-default .navbar-nav > li > a.minimized{
-  padding-bottom: 10px;
-  padding-top: 10px;
+@media (min-width: $screen-lg-min) {
+  @include minimized-navbar();
 }
 
-.navbar-header.minimized{
-  height: 10px;
-}
+// TODO: make navbar minimized for smaller screens too.
+// @media (max-width: $screen-xs-max) {
+// }
+
+// @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+// }
+
