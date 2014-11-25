@@ -20,5 +20,6 @@
 
 // Varialbes should be defined before "bootstrap".
 $navbar-height: $nav_height;
+$grid-float-breakpoint: 994px;                                                                      // To fix problem with site's name and links overlaping/second row creating.
 
 @import "bootstrap";
