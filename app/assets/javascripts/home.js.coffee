@@ -4,23 +4,21 @@
 
 jQuery ->
   # Nav minimized status by parts.
-  is_navbar_minimized        = false
-  is_navbar_header_minimized = false
-  is_links_minimized         = false
+  is_navbar_minimized = false
+  is_links_minimized  = false
 
   # Status of navbar animation.
-  is_navbar_transforming        = false
-  is_navbar_header_transforming = false
-  is_links_transforming         = false
+  is_navbar_transforming = false
+  is_links_transforming  = false
 
   is_nav_minimized = () ->
-    is_navbar_minimized && is_navbar_header_minimized && is_links_minimized
+    is_navbar_minimized && is_links_minimized
 
   is_nav_maximized = () ->
     !is_nav_minimized()
 
   is_nav_transforming_now = () ->
-    is_navbar_transforming && is_navbar_header_transforming && is_links_transforming
+    is_navbar_transforming && is_links_transforming
 
   $(document).on "scroll", ->
     SIZE_OF_BIG_NAV = 90
@@ -34,9 +32,8 @@ jQuery ->
       # Minimizing.
       if is_nav_minimized() == false and is_nav_transforming_now() == false
         # Animation started.
-        is_links_transforming         = true
-        is_navbar_transforming        = true
-        is_navbar_header_transforming = true
+        is_links_transforming  = true
+        is_navbar_transforming = true
 
         # Make links smaller.
         $("nav.navbar a").animate({
@@ -57,21 +54,14 @@ jQuery ->
           is_navbar_transforming = false
         )
 
-        # Nav header
-        $(".navbar-header").animate({
-          "height": "#{MIN_NAV_ACTUAL_HEIGHT}px"
-        },
-        complete: ->
-          is_navbar_header_minimized = true
-          is_navbar_header_transforming = false
-        )
+        # Nav header (css instead of animation to remove blinking).
+        $(".navbar-header").css("height": "#{MIN_NAV_ACTUAL_HEIGHT}px")
     else
       # Maximizing.
       if is_nav_maximized() == false && is_nav_transforming_now() == false
         # Animation started.
-        is_links_transforming         = true
-        is_navbar_transforming        = true
-        is_navbar_header_transforming = true
+        is_links_transforming  = true
+        is_navbar_transforming = true
 
         # Make links bigger.
         $("nav.navbar a").animate({
@@ -92,11 +82,5 @@ jQuery ->
           is_navbar_transforming = false
         )
 
-        # Nav header
-        $(".navbar-header").animate({
-          "height": SIZE_OF_BIG_NAV
-        },
-        complete: ->
-          is_navbar_header_minimized = false
-          is_navbar_header_transforming = false
-        )
+        # Nav header (css instead of animation to remove blinking).
+        $(".navbar-header").css("height": SIZE_OF_BIG_NAV)
