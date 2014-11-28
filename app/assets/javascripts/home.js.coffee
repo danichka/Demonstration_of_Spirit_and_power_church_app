@@ -31,8 +31,9 @@ jQuery ->
   $(document).on "scroll", ->
     SIZE_OF_BIG_NAV        = 90
     BIG_NAV_BOTTOM_PADDING = 15
-    SIZE_OF_SMALL_NAV      = 45
-    MIN_NAV_ACTUAL_HEIGHT  = 10
+    MIN_NAV_ACTUAL_HEIGHT  = 70
+    MIN_NAV_PARTS          = 4
+    MIN_NAV_PART_SIZE      = MIN_NAV_ACTUAL_HEIGHT / MIN_NAV_PARTS
 
     scrollTop     = $(window).scrollTop()
     navbar_links  = $("nav.navbar a")
@@ -48,8 +49,8 @@ jQuery ->
 
         # Make links smaller.
         navbar_links.animate({
-          "padding-bottom": "#{MIN_NAV_ACTUAL_HEIGHT}px",
-          "padding-top": "#{MIN_NAV_ACTUAL_HEIGHT}px"
+          "padding-bottom": "#{MIN_NAV_PART_SIZE}px",
+          "padding-top": "#{MIN_NAV_PART_SIZE}px"
         },
         complete: ->
           is_links_minimized = true
@@ -60,7 +61,7 @@ jQuery ->
 
         # Make nav smaller too.
         navbar.animate({
-          "min-height": "#{MIN_NAV_ACTUAL_HEIGHT}px"
+          "min-height": "#{MIN_NAV_PART_SIZE}px"
         },
         complete: ->
           is_navbar_minimized = true
@@ -70,7 +71,7 @@ jQuery ->
         )
 
         # Nav header (css instead of animation to remove blinking).
-        navbar_header.css("height": "#{MIN_NAV_ACTUAL_HEIGHT}px")
+        navbar_header.css("height": "#{MIN_NAV_PART_SIZE}px")
         minimize_element(navbar_header)
     else
       # Maximizing.
