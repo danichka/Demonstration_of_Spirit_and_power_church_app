@@ -12,6 +12,7 @@ gem 'bootstrap-sass', '3.3.1'
 gem 'autoprefixer-rails'
 gem 'therubyracer', '0.12.1',  platforms: :ruby                                                     # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'gon', '5.2.3'
+gem 'dalli', '2.7.2'                                                                                # Cache store.
 
 gem 'sdoc', '~> 0.4.0', group: :doc                                                                 # bundle exec rake doc:rails generates the API under doc/api.
 

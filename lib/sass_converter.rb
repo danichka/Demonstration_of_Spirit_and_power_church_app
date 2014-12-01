@@ -1,11 +1,13 @@
 module SassConverter
   module_function
 
-  # TODO: read file only if it changed (caching results).
+  # TODO: execute expressions such as $new_var: $old_var + $some_other_var.
 
   def convert(file_path="#{Rails.root}/app/assets/stylesheets/variables.css.scss")
-    variables_list = read_variables(file_path)
-    variables_to_h(variables_list)
+    Rails.cache.fetch([file_path, File.mtime(file_path)]) do
+      variables_list = read_variables(file_path)
+      variables_to_h(variables_list)
+    end
   end
 
   private
