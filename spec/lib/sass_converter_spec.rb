@@ -7,7 +7,8 @@ describe "SassConverter" do
                                  border_width: 0,
                                  width: "90px",
                                  line_height: 1.5,
-                                 screen_us_max: "$screen_md_max + 300" })
+                                 screen_us_max: "$screen_md_max + 300",
+                                 screen_sm_max: "400px" })
   end
 
   it "should raise error if variable is not correct" do

@@ -23,7 +23,7 @@ module SassConverter
   def self.variables_to_h(variables_list)
     sass_hash = {}
     variables_list.each do |line|
-      regexp_result = line.scan(/\$(.+):(\s*)(.+);$/).flatten                                       #$ any_symbols : any_space_symbols actual_value ;
+      regexp_result = line.scan(/\$(.+):(\s*)(.+);/).flatten                                       #$ any_symbols : any_space_symbols actual_value ;
 
       if regexp_result.any?
         var_name  = regexp_result[0]                                                                # First regexp group.
