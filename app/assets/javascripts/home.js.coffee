@@ -28,12 +28,17 @@ jQuery ->
     element.removeClass("minimized")
     element.removeAttr('style')
 
+  console.log gon.sass_vars
+
   $(document).on "scroll", ->
-    SIZE_OF_BIG_NAV        = 90
-    BIG_NAV_BOTTOM_PADDING = 15
-    MIN_NAV_ACTUAL_HEIGHT  = 70
-    MIN_NAV_PARTS          = 4
-    MIN_NAV_PART_SIZE      = MIN_NAV_ACTUAL_HEIGHT / MIN_NAV_PARTS
+    sass_vars = gon.sass_vars
+
+    SIZE_OF_BIG_NAV        = SassConverterHelpers.value_to_int(sass_vars['big_nav_height'])
+    BIG_NAV_BOTTOM_PADDING = SassConverterHelpers.value_to_int(sass_vars['big_nav_bottom_padding'])
+    BIG_NAV_LINKS_PADDING  = 35
+    MIN_NAV_ACTUAL_HEIGHT  = SassConverterHelpers.value_to_int(sass_vars['min_nav_height'])
+    NAV_PARTS              = sass_vars['nav_parts']
+    MIN_NAV_PART_SIZE      = MIN_NAV_ACTUAL_HEIGHT / NAV_PARTS
 
     scrollTop     = $(window).scrollTop()
     navbar_links  = $("nav.navbar a")
@@ -82,8 +87,8 @@ jQuery ->
 
         # Make links bigger.
         navbar_links.animate({
-          "padding-bottom": "35px",
-          "padding-top": "35px"
+          "padding-bottom": "#{BIG_NAV_LINKS_PADDING}px",
+          "padding-top": "#{BIG_NAV_LINKS_PADDING}px"
         },
         complete: ->
           is_links_minimized = false

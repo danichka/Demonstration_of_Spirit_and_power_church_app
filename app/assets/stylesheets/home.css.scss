@@ -3,6 +3,7 @@
 $ocean_blue_color: #82c9ed;
 $light_black: #4c4c4c;
 $hard_black: #1c1c1c;
+$min_nav_part_size: $min_nav_height / $nav_parts;
 
 .navbar-default{
   background-color: rgba(255, 255, 255, 0.95) !important;
@@ -29,7 +30,7 @@ $hard_black: #1c1c1c;
 
 // To show data AFTER navbar (removing blocking the content).
 body {
-  padding-top: $nav_height + 15px; // Few pixels added for more space.
+  padding-top: $big_nav_height + $big_nav_bottom_padding; // Few pixels added for more space.
 }
 
 a.navbar-brand{
@@ -43,17 +44,17 @@ a.navbar-brand{
 
 @mixin minimized-navbar() {
   .navbar.minimized{
-    min-height: 10px !important;
+    min-height: $min_nav_part_size !important;
   }
 
   a.navbar-brand.minimized{
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding-bottom: $min_nav_part_size;
+    padding-top: $min_nav_part_size;
   }
 
   .navbar-default .navbar-nav > li > a.minimized{
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding-bottom: $min_nav_part_size;
+    padding-top: $min_nav_part_size;
   }
 
   .navbar-header.minimized{
