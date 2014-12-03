@@ -33,9 +33,25 @@ body {
   padding-top: $big_nav_height + $big_nav_bottom_padding; // Few pixels added for more space.
 }
 
+
 a.navbar-brand{
   font-weight: bold;
   color: $hard_black !important;
+}
+
+// ----------------------------------------------------------------- //
+// -------------------- Navbar brand image. ------------------------ //
+// ----------------------------------------------------------------- //
+
+img#brand-image{
+  float: left;
+  margin-right: 5px;
+}
+
+@media (min-width: 0px) and (max-width: $min_nav_width_to_show_brand_img) {
+  img#brand-image{
+    display: none;
+  }
 }
 
 // ----------------------------------------------------------------- //
@@ -47,11 +63,6 @@ a.navbar-brand{
     min-height: $min_nav_part_size !important;
   }
 
-  a.navbar-brand.minimized{
-    padding-bottom: $min_nav_part_size;
-    padding-top: $min_nav_part_size;
-  }
-
   .navbar-default .navbar-nav > li > a.minimized{
     padding-bottom: $min_nav_part_size;
     padding-top: $min_nav_part_size;
@@ -59,6 +70,16 @@ a.navbar-brand{
 
   .navbar-header.minimized{
     margin-bottom: -51px;
+  }
+
+  a.navbar-brand.minimized{
+    padding-bottom: $min_nav_part_size;
+    padding-top: $min_nav_part_size;
+
+  }
+
+  img#brand-image.minimized{
+    width: $min_nav_brand_img_width;
   }
 }
 
