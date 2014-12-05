@@ -1,0 +1,94 @@
+@import "variables";
+
+$ocean_blue_color: #82c9ed;
+$light_black: #4c4c4c;
+$hard_black: #1c1c1c;
+$min_nav_part_size: $min_nav_height / $nav_parts;
+
+.navbar-default{
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.navbar-default .navbar-nav > li > a{
+  color: $light_black !important;
+
+  &:hover{
+    color: $ocean_blue_color !important;
+
+    span.underliner{
+      border-bottom: 1px solid $ocean_blue_color;
+      padding-bottom: 8px;
+    }
+  }
+}
+
+// Customize bottom of the navbar
+.navbar-fixed-top{
+  border-width: 0 0 0 !important;
+  box-shadow: 0px 0px 2px;
+}
+
+a.navbar-brand{
+  font-weight: bold;
+  color: $hard_black !important;
+}
+
+// ----------------------------------------------------------------- //
+// -------------------- Navbar brand image. ------------------------ //
+// ----------------------------------------------------------------- //
+
+img#brand-image{
+  float: left;
+  margin-right: 5px;
+}
+
+@media (min-width: 0px) and (max-width: $min_nav_width_to_show_brand_img) {
+  img#brand-image{
+    display: none;
+  }
+}
+
+// ----------------------------------------------------------------- //
+// -------------------- Minimized navbar style. -------------------- //
+// ----------------------------------------------------------------- //
+
+@mixin minimized-navbar() {
+  .navbar.minimized{
+    min-height: $min_nav_part_size !important;
+  }
+
+  .navbar-default .navbar-nav > li > a.minimized{
+    padding-bottom: $min_nav_part_size;
+    padding-top: $min_nav_part_size;
+  }
+
+  .navbar-header.minimized{
+    margin-bottom: -51px;
+  }
+
+  a.navbar-brand.minimized{
+    padding-bottom: $min_nav_part_size;
+    padding-top: $min_nav_part_size;
+
+  }
+
+  img#brand-image.minimized{
+    width: $min_nav_brand_img_width;
+  }
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  @include minimized-navbar();
+}
+
+@media (min-width: $screen-lg-min) {
+  @include minimized-navbar();
+}
+
+// TODO: make navbar minimized for smaller screens too.
+// @media (max-width: $screen-xs-max) {
+// }
+
+// @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+// }
+
