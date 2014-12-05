@@ -1,6 +1,0 @@
-@import "variables";
-
-// To show data AFTER navbar (removing blocking the content).
-body {
-  padding-top: $big_nav_height + $big_nav_bottom_padding; // Few pixels added for more space.
-}
