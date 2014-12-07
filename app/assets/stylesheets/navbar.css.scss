@@ -1,8 +1,6 @@
 @import "variables";
+@import "colors";
 
-$ocean_blue_color: #82c9ed;
-$light_black: #4c4c4c;
-$hard_black: #1c1c1c;
 $min_nav_part_size: $min_nav_height / $nav_parts;
 
 .navbar-default{
