@@ -1,0 +1,76 @@
+@import "variables";
+
+$hello-title-font-size: 40px;
+$hello-body-font-size: 65px;
+
+div.home-hello-col {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+img.home-hello {
+  max-height: 600px;
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.55);
+}
+
+div#hello-text {
+  top: 30%;
+  left: 0;
+  position: absolute;
+  color: white;
+  text-align: center;
+  width: 100%;
+
+  animation-duration: 1.25s;
+
+  .hello-title {
+    font-size: $hello-body-font-size;
+  }
+
+  .hello-body {
+    font-size: $hello-title-font-size;
+  }
+
+  hr#welcome-hr {
+    width: 22%;
+  }
+}
+
+// Responsive fonts.
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  div#hello-text {
+    .hello-body {
+      font-size: $hello-title-font-size - 5px;
+    }
+
+    .hello-title {
+      font-size: $hello-body-font-size - 5px;
+    }
+  }
+}
+
+@media (min-width: $screen-xs-min) and (max-width: $screen-sm-max) {
+  div#hello-text {
+    .hello-body {
+      font-size: $hello-title-font-size - 10px;
+    }
+
+    .hello-title {
+      font-size: $hello-body-font-size - 10px;
+    }
+  }
+}
+
+@media (min-width: 0) and (max-width: $screen-xs-min) {
+  div#hello-text {
+    .hello-body {
+      font-size: $hello-title-font-size - 25px;
+    }
+
+    .hello-title {
+      font-size: $hello-body-font-size - 25px;
+    }
+  }
+}

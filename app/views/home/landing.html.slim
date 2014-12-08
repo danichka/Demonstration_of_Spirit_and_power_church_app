@@ -1,6 +1,16 @@
-div class="container-fluid"
-  div class="row"
-    div class="col-md-12"
+.container-fluid
+  .row
+    .col-md-12.home-hello-col
+      #hello-container
+        = image_tag 'home-hello.jpg', class: 'home-hello'
+        #hello-text
+          .hello-title Welcome!
+          hr#welcome-hr
+          .hello-body
+            | We are the church
+            br
+            | "Demonstration of Spirit and Power"!
+    .col-md-12
       - 50.times do
-        p = "Some Text" * 20
+        = "lalala" * 40
         br

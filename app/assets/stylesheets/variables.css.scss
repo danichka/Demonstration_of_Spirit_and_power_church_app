@@ -1,3 +1,4 @@
+$screen-xs-min: 572px;
 $screen-xs-max: 767px;
 $screen-sm-min: 768px;
 $screen-sm-max: 992px;
@@ -7,7 +8,7 @@ $screen-lg-min: 1200px;
 
 // Navbar
 $big_nav_height: 90px;
-$big_nav_bottom_padding: 15px;                                                                      // This padding is needed to give more space for text.
+$big_nav_bottom_padding: 0px;                                                                      // This padding is needed to give more space for text.
 $nav_parts: 4;                                                                                      // To minimize navbar we need to nav_height / nav_parts to find size of each nav's part.
 $min_nav_height: 40px;
 $min_nav_width_to_show_brand_img: 443px;

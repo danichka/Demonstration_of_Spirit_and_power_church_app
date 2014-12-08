@@ -46,6 +46,13 @@ jQuery ->
     is_navbar_transforming    = true
     is_brand_img_transforming = true
 
+  # Executing.
+
+  # Animate hello text.
+  $(window).load ->
+    $("#hello-text").addClass('animated fadeInUp')
+
+  # Resize navbar.
   $(document).on "scroll", ->
     scrollTop     = $(window).scrollTop()
     navbar_links  = $("nav.navbar a")
