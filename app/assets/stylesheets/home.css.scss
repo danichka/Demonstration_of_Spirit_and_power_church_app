@@ -33,44 +33,38 @@ div#hello-text {
     font-size: $hello-title-font-size;
   }
 
-  hr#welcome-hr {
+  hr.welcome-hr {
     width: 22%;
   }
 }
 
 // Responsive fonts.
+@mixin hello-message($title-font-size, $body-font-size) {
+  .hello-body {
+    font-size: $title-font-size;
+  }
+
+  .hello-title {
+    font-size: $body-font-size;
+  }
+}
+
 @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
   div#hello-text {
-    .hello-body {
-      font-size: $hello-title-font-size - 5px;
-    }
-
-    .hello-title {
-      font-size: $hello-body-font-size - 5px;
-    }
+    @include hello-message($hello-title-font-size - 5px, $hello-body-font-size - 5px)
   }
 }
 
 @media (min-width: $screen-xs-min) and (max-width: $screen-sm-max) {
   div#hello-text {
-    .hello-body {
-      font-size: $hello-title-font-size - 10px;
-    }
-
-    .hello-title {
-      font-size: $hello-body-font-size - 10px;
-    }
+    top: 20%;                                                                                       // Centering the text on tablet/phones.
+    @include hello-message($hello-title-font-size - 10px, $hello-body-font-size - 10px)
   }
 }
 
 @media (min-width: 0) and (max-width: $screen-xs-min) {
   div#hello-text {
-    .hello-body {
-      font-size: $hello-title-font-size - 25px;
-    }
-
-    .hello-title {
-      font-size: $hello-body-font-size - 25px;
-    }
+    top: 20%;                                                                                       // Centering the text on tablet/phones.
+    @include hello-message($hello-title-font-size - 25px, $hello-body-font-size - 25px)
   }
 }
