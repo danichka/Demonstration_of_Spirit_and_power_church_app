@@ -9,6 +9,7 @@ $min_nav_part_size: $min_nav_height / $nav_parts;
 
 .navbar-default .navbar-nav > li > a{
   color: $light_black !important;
+  transition: color 0.3s ease;
 
   &:hover{
     color: $ocean_blue_color !important;
