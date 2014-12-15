@@ -24,3 +24,5 @@ $navbar-height: $big_nav_height;
 $grid-float-breakpoint: 994px;                                                                      // To fix problem with site's name and links overlaping/second row creating.
 
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
