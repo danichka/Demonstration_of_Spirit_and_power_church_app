@@ -3,7 +3,7 @@
 $hello-title-font-size: 40px;
 $hello-body-font-size: 65px;
 $lookup-circle-size: 180px;
-$section-header-bottom-padding: 69px;
+$lookup-section-min-height: 466px;
 
 // Common section header
 @mixin common-section-header() {
@@ -93,11 +93,11 @@ $section-header-bottom-padding: 69px;
 // 'What you can do here' section
 div.section-header {
   @include common-section-header;
-  margin-bottom: $section-header-bottom-padding;
+  margin-bottom: 69px;
 }
 
-#lookup-section-row {
-  padding-bottom: $section-header-bottom-padding;
+#lookup-section {
+  min-height: $lookup-section-min-height !important;
 }
 
 div.round-section-preview-block {

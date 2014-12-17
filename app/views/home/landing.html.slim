@@ -9,16 +9,16 @@
           | We are the church
           br
           | "Demonstration of Spirit and Power"
-  .row
+  .row#lookup-section
     .col-md-12
       .section-header
         h1.text-center Check out what you can do here
         hr
-      .row#lookup-section-row
+      .row
         .col-md-10.col-md-offset-1
           .row
             .col-md-3
-              .round-section-preview-block
+              #photos-lookup-block.round-section-preview-block.hidden
                 .circle.center-block
                   .icon-wrapper
                     = icon('photo', '', class: 'fa-5x')
@@ -27,7 +27,7 @@
                 hr.divider
                 p.description Look and see photos about different events that happend in our Church.
             .col-md-3
-              .round-section-preview-block
+              #sermons-lookup-block.round-section-preview-block.hidden
                 .circle.center-block
                   .icon-wrapper
                     = icon('headphones', '', class: 'fa-5x')
@@ -36,7 +36,7 @@
                 hr.divider
                 p.description Enjoy the Word of our God, Jesus Christ.
             .col-md-3
-              .round-section-preview-block
+              #videos-lookup-block.round-section-preview-block.hidden
                 .circle.center-block
                   .icon-wrapper
                     = icon('video-camera', '', class: 'fa-5x')
@@ -45,7 +45,7 @@
                 hr.divider
                 p.description Watch the videous and feed your soul with righteousness.
             .col-md-3
-              .round-section-preview-block
+              #map-lookup-block.round-section-preview-block.hidden
                 .circle.center-block
                   .icon-wrapper
                     = icon('map-marker', '', class: 'fa-5x')
