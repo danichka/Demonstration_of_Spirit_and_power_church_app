@@ -18,39 +18,15 @@
         .col-md-10.col-md-offset-1
           .row
             .col-md-3
-              #photos-lookup-block.round-section-preview-block.hidden
-                .circle.center-block
-                  .icon-wrapper
-                    = icon('photo', '', class: 'fa-5x')
-                h3.title
-                  | Enjoy photos
-                hr.divider
-                p.description Look and see photos about different events that happend in our Church.
+              #photos-lookup-block.hidden
+                = block 'lookup_circle', options: {href: '#', title: 'Enjoy photos', description: 'Look and see photos about different events that happened in our Church.', icon: {name: 'photo'}}
             .col-md-3
-              #sermons-lookup-block.round-section-preview-block.hidden
-                .circle.center-block
-                  .icon-wrapper
-                    = icon('headphones', '', class: 'fa-5x')
-                h3.title
-                  | Listen to sermons
-                hr.divider
-                p.description Enjoy the Word of our God, Jesus Christ.
+              #sermons-lookup-block.hidden
+                = block 'lookup_circle', options: {href: '#', title: 'Listen to sermons', description: 'Enjoy the Word of our God, Jesus Christ.', icon: {name: 'headphones'}}
             .col-md-3
-              #videos-lookup-block.round-section-preview-block.hidden
-                .circle.center-block
-                  .icon-wrapper
-                    = icon('video-camera', '', class: 'fa-5x')
-                h3.title
-                  | Watch videos
-                hr.divider
-                p.description Watch the videous and feed your soul with righteousness.
+              #videos-lookup-block.hidden
+                = block 'lookup_circle', options: {href: '#', title: 'Watch videos', description: 'Watch the videos and feed your soul with righteousness.', icon: {name: 'video-camera'}}
             .col-md-3
-              #map-lookup-block.round-section-preview-block.hidden
-                .circle.center-block
-                  .icon-wrapper
-                    = icon('map-marker', '', class: 'fa-5x')
-                h3.title
-                  | Find us!
-                hr.divider
-                p.description Do you want to visit us? You can find all additional information about our location.
+              #map-lookup-block.hidden
+                = block 'lookup_circle', options: {href: '#', title: 'Find us', description: 'Do you want to visit us? You can find all additional information about our location.', icon: {name: 'map-marker'}}
 

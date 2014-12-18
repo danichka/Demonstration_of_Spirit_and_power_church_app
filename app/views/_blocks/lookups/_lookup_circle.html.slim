@@ -1,0 +1,14 @@
+-# Block: Circle in lookup section
+-# Params:
+-# options [hash] - :href, :title, :desription, icon: {:name}
+
+.lookup-circle
+  = link_to options[:href] do
+    .circle.center-block
+      .icon-wrapper
+        = icon(options[:icon][:name], '', class: 'fa-5x')
+  h3.title
+    = options[:title]
+  hr.divider
+  p.description
+    = options[:description]

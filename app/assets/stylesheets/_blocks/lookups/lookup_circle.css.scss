@@ -1,0 +1,55 @@
+$lookup-circle-size: 180px;
+
+div.lookup-circle {
+  div.circle {
+    height: $lookup-circle-size;
+    width: $lookup-circle-size;
+    border-radius: $lookup-circle-size;
+    padding: 0;
+    background-color: #D8D8D8;
+    transform: rotate(0deg) skew(0deg);
+    border-top: 0px transparent;
+    text-align: center;
+    transition: background-color 0.5s ease;
+
+    &:hover {
+      background-color: black;
+
+      i.fa {
+        color: white;
+      }
+    }
+
+    i.fa {
+      color: black;
+    }
+
+    // Centering icon vertically.
+    .icon-wrapper {
+      line-height: $lookup-circle-size;
+
+      i.fa {
+        vertical-align: middle;
+      }
+    }
+  }
+
+  h3.title {
+    text-align: center;
+    color: #1c1c1c;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  hr.divider {
+    width: 50px;
+    border-top: 1px solid black;
+    margin-top: 0;
+  }
+
+  p.description {
+    text-align: center;
+    margin-top: -15px;                                                                              // To move content closer to devider.
+    padding-bottom: 32px;                                                                           // Separating onle circle block from another in mobiles.
+  }
+}

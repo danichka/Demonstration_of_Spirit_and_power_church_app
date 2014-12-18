@@ -21,7 +21,7 @@ jQuery ->
     $(id).removeClass("hidden")
     $(id).addClass('animated fadeInUp')
 
-  # Detecting if elemnt is partially on the screen.
+  # Detecting if element is partially on the screen.
   #
   # elem - selector of element, for example "#lookup-section".
   # offset - how earlier element should be detected (it's size of elem - offset).

@@ -14,6 +14,7 @@ gem 'therubyracer', '0.12.1',  platforms: :ruby                                 
 gem 'gon', '5.2.3'
 gem 'dalli', '2.7.2'                                                                                # Cache store.
 gem 'font-awesome-sass', '~> 4.2.2'
+gem 'smart_blocks', '0.0.1'
 
 gem 'sdoc', '~> 0.4.0', group: :doc                                                                 # bundle exec rake doc:rails generates the API under doc/api.
 
