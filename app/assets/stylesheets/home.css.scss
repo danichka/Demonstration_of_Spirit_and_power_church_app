@@ -92,7 +92,7 @@ $lookup-section-min-height: 466px;
 // 'What you can do here' section
 div.section-header {
   @include common-section-header;
-  margin-bottom: 69px;
+  margin-bottom: 40px;
 }
 
 #lookup-section {
@@ -100,6 +100,11 @@ div.section-header {
 }
 
 // Photo gallery
+div.gallery-header {
+  @include common-section-header;
+  margin-bottom: 40px;
+}
+
 .landing-gallery-img {
   padding-bottom: 5px;
   width: 100%;
