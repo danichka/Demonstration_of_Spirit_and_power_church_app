@@ -1,10 +1,10 @@
 jQuery ->
   $(window).load ->
     animate_hello_text()
-    animate_lookup_blocks() if isPartiallyScrolledIntoView("#lookup-section")
+    animate_lookup_blocks() if isPartiallyScrolledIntoViewOrHigherThenWindow("#lookup-section")
 
   $(document).on "scroll", ->
-    animate_lookup_blocks() if isPartiallyScrolledIntoView("#lookup-section")
+    animate_lookup_blocks() if isPartiallyScrolledIntoViewOrHigherThenWindow("#lookup-section")
 
   animate_hello_text = () ->
     $("#hello-text").addClass('animated fadeInUp')
@@ -19,16 +19,16 @@ jQuery ->
 
   animate_lookup_block = (id) ->
     $(id).removeClass("hidden")
-    $(id).addClass('animated fadeInUp')
+    $(id).addClass('animated fadeIn')
 
   # Detecting if element is partially on the screen.
   #
   # elem - selector of element, for example "#lookup-section".
   # offset - how earlier element should be detected (it's size of elem - offset).
-  isPartiallyScrolledIntoView = (elem, offset = 250) ->
+  isPartiallyScrolledIntoViewOrHigherThenWindow = (elem, offset = 150) ->
     docViewTop = $(window).scrollTop()
     docViewBottom = docViewTop + $(window).height()
     elemTop = $(elem).offset().top
     elemBottom = elemTop + $(elem).height() - offset
 
-    return (elemBottom <= docViewBottom) and (elemTop >= docViewTop)
+    return ((elemBottom <= docViewBottom) and (elemTop >= docViewTop)) or (docViewBottom > elemBottom)
