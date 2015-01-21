@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Loremaster/Demonstration_of_Spirit_and_power_church_app.svg)](https://travis-ci.org/Loremaster/Demonstration_of_Spirit_and_power_church_app)
+
 This is source code of the web application for the church "Demonstration of Spirit and power".
 
 #Setup
@@ -18,8 +20,8 @@ $ brew install memcached
 ####Configuration
 
 1. Clone this repository.
-2. Create file `database.yml` using `config/database.yml.example` as your example. Remove `production` section.
-3. Create file `secrets/yml` using `config/secrets.yml.example` as your example.
+2. Create file `database.yml` using `config/database.example.yml` as your example. Remove `production` section.
+3. Create file `secrets.yml` using `config/secrets.example.yml` as your example.
 4. Run `$ bundle`
 
 ####Database creation
