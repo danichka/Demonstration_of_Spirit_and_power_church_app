@@ -1,0 +1,17 @@
+language: ruby
+bundler_args: --without development production
+cache: bundler
+branches:
+  only:
+    - master
+rvm:
+  - 2.1.5
+env:
+  - DB=postgres
+before_script:
+  - cp config/database.example.yml config/database.yml
+  - psql -c 'create database dosap_church_app_test;' -U postgres
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate
+  - bundle exec rake db:test:prepare
+  - bundle exec rspec
