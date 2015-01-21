@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Loremaster/Demonstration_of_Spirit_and_power_church_app.svg)](https://travis-ci.org/Loremaster/Demonstration_of_Spirit_and_power_church_app)
+
 This is source code of the web application for the church "Demonstration of Spirit and power".
 
 #Setup
