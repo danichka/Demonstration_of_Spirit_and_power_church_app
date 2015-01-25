@@ -1,0 +1,10 @@
+$footer_height: 60px;
+
+#footer {
+  height: $footer_height;
+  background-color: black;
+
+  .info {
+    color: white;
+  }
+}

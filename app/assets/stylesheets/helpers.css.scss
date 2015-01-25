@@ -1,0 +1,14 @@
+// This element allows you to center content vertically and horizontally.
+// link: http://www.wiredmark.com/center-responsive-element-horizontally-vertically-using-bootstrap/
+//
+// Usage:
+//
+// .vertical-horizontal-center
+//    .your-content-here
+div.vertical-horizontal-center {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
