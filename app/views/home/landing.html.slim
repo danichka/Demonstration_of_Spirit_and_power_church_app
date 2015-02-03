@@ -3,36 +3,33 @@
     .col-md-12#home-hello-col
       = image_tag 'home-hello.jpg', class: 'hello'
       #hello-text
-        .title Welcome!
+        .title = t('views.landing.hello.title')
         hr.welcome
-        .body
-          | We are the church
-          br
-          | "Demonstration of Spirit and Power"
+        .body == t('views.landing.hello.body')
   .row#lookup-section
     .col-md-12
       .section-header
-        h1.text-center Check out what you can do here
+        h1.text-center = t('views.landing.lookup.title')
         hr
       .row
         .col-md-10.col-md-offset-1
           .row
             .col-md-3
               #photos-lookup-block.hidden
-                = block 'lookup_circle', options: {href: '#', title: 'Enjoy photos', description: 'Look and see photos about different events that happened in our Church.', icon: {name: 'photo'}}
+                = block 'lookup_circle', options: {href: '#', title: t('views.landing.lookup.photos.title'), description: t('views.landing.lookup.photos.body'), icon: {name: 'photo'}}
             .col-md-3
               #sermons-lookup-block.hidden
-                = block 'lookup_circle', options: {href: '#', title: 'Listen to sermons', description: 'Enjoy the Word of our God, Jesus Christ.', icon: {name: 'headphones'}}
+                = block 'lookup_circle', options: {href: '#', title: t('views.landing.lookup.sermons.title'), description: t('views.landing.lookup.sermons.body'), icon: {name: 'headphones'}}
             .col-md-3
               #videos-lookup-block.hidden
-                = block 'lookup_circle', options: {href: '#', title: 'Watch videos', description: 'Watch the videos and feed your soul with righteousness.', icon: {name: 'video-camera'}}
+                = block 'lookup_circle', options: {href: '#', title: t('views.landing.lookup.videos.title'), description: t('views.landing.lookup.videos.body'), icon: {name: 'video-camera'}}
             .col-md-3
               #map-lookup-block.hidden
-                = block 'lookup_circle', options: {href: '#', title: 'Find us', description: 'Do you want to visit us? You can find all additional information about our location.', icon: {name: 'map-marker'}}
+                = block 'lookup_circle', options: {href: '#', title: t('views.landing.lookup.map.title'), description: t('views.landing.lookup.map.body'), icon: {name: 'map-marker'}}
   .row
     .col-md-12
       .gallery-header
-        h1.text-center Our photos
+        h1.text-center = t('views.photos.title')
         hr
       .row
         - (1..6).each do |img_num|

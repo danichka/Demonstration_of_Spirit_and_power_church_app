@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#landing'
+  scope "/:locale", locale: /#{I18n.available_locales.join("|")}/ do
+    root 'home#landing'
+  end
+
+  get '*path', to: redirect("/#{I18n.default_locale}/%{path}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
+  get '', to: redirect("/#{I18n.default_locale}")
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

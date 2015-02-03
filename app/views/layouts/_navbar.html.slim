@@ -8,26 +8,23 @@ nav class="navbar navbar-default navbar-fixed-top" role="navigation"
         span class="icon-bar"
         span class="icon-bar"
       = image_tag "omega.gif", id: 'brand-image'
-      = link_to "Demonstration of Spirit and Power", root_path, class: "navbar-brand"
+      = link_to t('views.navbar.brand'), root_path, class: "navbar-brand"
 
     / Collect the nav links, forms, and other content for toggling
     div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"
       ul class="nav navbar-nav navbar-right"
         li
           a href="#"
-           span.underliner Home
+            span.underliner= t('views.navbar.links.photos')
         li
           a href="#"
-            span.underliner Photos
+            span.underliner= t('views.navbar.links.sermons')
         li
           a href="#"
-            span.underliner Sermons
+            span.underliner= t('views.navbar.links.videos')
         li
           a href="#"
-            span.underliner Videos
+            span.underliner= t('views.navbar.links.articles')
         li
           a href="#"
-            span.underliner Articles
-        li
-          a href="#"
-            span.underliner Contact
+            span.underliner= t('views.navbar.links.contacts')

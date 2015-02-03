@@ -20,4 +20,34 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  views:
+    footer:
+      copyright: 'Demonstration of Spirit and Power, 2015'
+    landing:
+      hello:
+        title: Welcome!
+        body: We are the church <br/> "Demonstration of Spirit and Power"
+      lookup:
+        title: Check out what you can do here
+        map:
+          title: Find us
+          body: Do you want to visit us? You can find all additional information about our location
+        photos:
+          title: Enjoy photos
+          body: Look and see photos about different events that happened in our Church
+        sermons:
+          title: Listen to sermons
+          body: 'Enjoy the Word of our God, Jesus Christ'
+        videos:
+          title: Watch videos
+          body: Watch the videos and feed your soul with righteousness
+    navbar:
+      brand: Demonstration of Spirit and Power
+      links:
+        articles: Articles
+        contacts: Contacts
+        photos: Photos
+        sermons: Sermons
+        videos: Videos
+    photos:
+      title: Our photos
