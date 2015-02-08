@@ -48,6 +48,8 @@ en:
         contacts: Contacts
         photos: Photos
         sermons: Sermons
+        settings: Settings
+        sign_out: Sign out
         videos: Videos
     photos:
       title: Our photos

@@ -28,3 +28,10 @@ nav class="navbar navbar-default navbar-fixed-top" role="navigation"
         li
           a href="#"
             span.underliner= t('views.navbar.links.contacts')
+        - if user_signed_in?
+          li
+            = link_to edit_user_registration_path do
+              span.underliner= t('views.navbar.links.contacts')
+          li
+            = link_to destroy_user_session_path, method: :delete do
+              span.underliner= t("views.navbar.links.sign_out")

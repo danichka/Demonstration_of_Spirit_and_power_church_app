@@ -15,6 +15,9 @@ gem 'gon', '5.2.3'
 gem 'dalli', '2.7.2'                                                                                # Cache store.
 gem 'font-awesome-sass', '~> 4.2.2'
 gem 'smart_blocks', '0.0.1'
+gem 'devise', '3.4.1'
+gem 'devise-i18n', '0.11.3'
+gem 'devise-i18n-views', '0.3.3'
 
 gem 'sdoc', '~> 0.4.0', group: :doc                                                                 # bundle exec rake doc:rails generates the API under doc/api.
 
@@ -32,6 +35,7 @@ end
 
 group :test do
   gem 'database_cleaner', '1.3.0'
+  gem 'factory_girl_rails', '4.5.0'
 end
 
 # Use unicorn as the app server
